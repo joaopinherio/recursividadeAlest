@@ -1,19 +1,29 @@
-public class ListaBaseadaEmListaEncadeada<T> implements ListaDala<T> {
-    private No<T> cabeca; // Início da lista
+public class ListaBaseadaEmListaEncadeada<Integer>{
+    private No<Integer> cabeca; // Início da lista
     private int tamanho;
 
     public ListaBaseadaEmListaEncadeada() {
         this.cabeca = null;
         this.tamanho = 0;
     }
+    public int somaElementos(No atual){
+        int resultado = 0;
+        if(atual == null){
+            return resultado;
+        }
+     
+        resultado = somaElementos(atual.proximo);
 
-    @Override
-    public void adicionarRegistro(T dado) {
-        No<T> novoNo = new No<>(dado);
+        return resultado;
+    }
+
+
+    public void adicionarRegistro(Integer valor) {
+        No<Integer> novoNo = new No<>(valor);
         if (cabeca == null) {
             cabeca = novoNo;
         } else {
-            No<T> atual = cabeca;
+            No<Integer> atual = cabeca;
             while (atual.proximo != null) {
                 atual = atual.proximo;
             }
@@ -27,7 +37,7 @@ public class ListaBaseadaEmListaEncadeada<T> implements ListaDala<T> {
         verificarIndice(posicao);
         No<T> atual = cabeca;
         if (posicao == 0) {
-            T removido = cabeca.dado;
+            T removido = cabeca.valor;
             cabeca = cabeca.proximo;
             tamanho--;
             return removido;
@@ -39,7 +49,7 @@ public class ListaBaseadaEmListaEncadeada<T> implements ListaDala<T> {
         }
         anterior.proximo = atual.proximo;
         tamanho--;
-        return atual.dado;
+        return atual.valor;
     }
 
     @Override
@@ -49,7 +59,16 @@ public class ListaBaseadaEmListaEncadeada<T> implements ListaDala<T> {
         for (int i = 0; i < posicao; i++) {
             atual = atual.proximo;
         }
-        return atual.dado;
+        return atual.valor;
+    }
+    
+    public No<T> obterNo(int posicao) {
+        verificarIndice(posicao);
+        No<T> atual = cabeca;
+        for (int i = 0; i < posicao; i++) {
+            atual = atual.proximo;
+        }
+        return atual;
     }
 
     @Override

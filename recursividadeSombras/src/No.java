@@ -1,9 +1,9 @@
-class No<T> {
-    T dado;
-    No<T> proximo;
+class No<Integer> {
+    Integer valor;
+    No<Integer> proximo;
 
-    No(T dado) {
-        this.dado = dado;
+    No(Integer valor) {
+        this.valor = valor;
         this.proximo = null;
     }
 }
