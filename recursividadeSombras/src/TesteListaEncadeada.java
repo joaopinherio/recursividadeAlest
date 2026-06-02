@@ -21,7 +21,7 @@ public class TesteListaEncadeada {
         System.out.println(listaEncadeada.contarMaioresQue(listaEncadeada.obterNo(0), 9));
 
         //4.3
-        System.out.println("soma elementos");
+        System.out.println("maior valor");
         System.out.println(listaEncadeada.maiorElemento(listaEncadeada.obterNo(0)));
 
 

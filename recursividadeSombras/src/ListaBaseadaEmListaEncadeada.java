@@ -45,6 +45,19 @@ public class ListaBaseadaEmListaEncadeada<Integer>{
         return (int)atual.valor;
     }
 
+    public void removerValor(int valor){
+        if(cabeca != null){
+            No<Integer> atual = cabeca;
+            
+            if((int)atual.valor == valor){
+                tamanho--;
+            }
+        }
+        
+        System.out.println("nao ha mais valores para serem removidos");
+
+    }
+
 
     public void adicionarRegistro(Integer valor) {
         No<Integer> novoNo = new No<>(valor);
