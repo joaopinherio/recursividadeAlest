@@ -47,11 +47,16 @@ public class ListaBaseadaEmListaEncadeada<Integer>{
 
     public void removerValor(int valor){
         if(cabeca != null){
+            if(atual)
             No<Integer> atual = cabeca;
             
             if((int)atual.valor == valor){
                 tamanho--;
+                atual = atual.proximo;
+                removerValor(valor);
             }
+
+            removerValor(valor);
         }
         
         System.out.println("nao ha mais valores para serem removidos");
