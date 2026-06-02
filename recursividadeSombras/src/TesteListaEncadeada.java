@@ -11,14 +11,20 @@ public class TesteListaEncadeada {
         // Tamanho da lista
         System.out.println("Tamanho: " + listaEncadeada.obterTamanho()); // 2
 
+        //4.1
+        System.out.println("soma elementos");
         System.out.println(listaEncadeada.somaElementos(listaEncadeada.obterNo(0)));
 
-        // Verificando se está vazia
-        System.out.println("Está vazia? " + listaEncadeada.estaVazia()); // false
 
-        // Limpando a lista
-        listaEncadeada.limparRegistros();
-        System.out.println("Está vazia após limpar? " + listaEncadeada.estaVazia()); // true
+        //4.2
+        System.out.println("count maior numero qeu:");
+        System.out.println(listaEncadeada.contarMaioresQue(listaEncadeada.obterNo(0), 9));
+
+        //4.3
+        System.out.println("soma elementos");
+        System.out.println(listaEncadeada.maiorElemento(listaEncadeada.obterNo(0)));
+
+
 
     }
 }

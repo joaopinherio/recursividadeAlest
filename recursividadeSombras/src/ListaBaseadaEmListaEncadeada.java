@@ -12,8 +12,37 @@ public class ListaBaseadaEmListaEncadeada<Integer>{
         if(atual == null){
             return 0;
         }
-        
+
         return (int)atual.valor + somaElementos(atual.proximo);
+    }
+
+    public int contarMaioresQue(No atual, int x){
+        if(atual == null){
+            return 0;
+        }
+        if((int)atual.valor > x){
+            return contarMaioresQue(atual.proximo, x) + 1 ;
+        }
+
+        return contarMaioresQue(atual.proximo, x);
+        
+    }
+
+    public int maiorElemento(No atual){
+        if(atual == null){
+            return 0;
+        }
+
+        if(atual.proximo != null){
+
+            if((int)atual.valor > (int)atual.proximo.valor){
+                return maiorElemento(atual.proximo);
+            }
+    
+            return maiorElemento(atual.proximo);
+        }
+        
+        return (int)atual.valor;
     }
 
 
