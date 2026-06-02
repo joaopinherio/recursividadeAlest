@@ -8,13 +8,12 @@ public class ListaBaseadaEmListaEncadeada<Integer>{
     }
     
     public int somaElementos(No atual){
-        int resultado = (int)atual.valor;
-        if(atual == null){
-            resultado = 0;
-        }
-        resultado += somaElementos(atual.proximo);
 
-        return resultado;
+        if(atual == null){
+            return 0;
+        }
+        
+        return (int)atual.valor + somaElementos(atual.proximo);
     }
 
 

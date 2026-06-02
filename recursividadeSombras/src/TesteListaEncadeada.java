@@ -11,7 +11,7 @@ public class TesteListaEncadeada {
         // Tamanho da lista
         System.out.println("Tamanho: " + listaEncadeada.obterTamanho()); // 2
 
-        System.out.println(listaEncadeada.somaElementos(listaEncadeada.obterNo(2)));
+        System.out.println(listaEncadeada.somaElementos(listaEncadeada.obterNo(0)));
 
         // Verificando se está vazia
         System.out.println("Está vazia? " + listaEncadeada.estaVazia()); // false
