@@ -1,4 +1,4 @@
-public class ListaBaseadaEmListaEncadeada<Integer>{
+public class ListaBaseadaEmListaEncadeada<Integer> {
     private No<Integer> cabeca; // Início da lista
     private int tamanho;
 
@@ -6,63 +6,71 @@ public class ListaBaseadaEmListaEncadeada<Integer>{
         this.cabeca = null;
         this.tamanho = 0;
     }
-    
-    public int somaElementos(No atual){
 
-        if(atual == null){
+    public int somaElementos(No atual) {
+
+        if (atual == null) {
             return 0;
         }
 
-        return (int)atual.valor + somaElementos(atual.proximo);
+        return (int) atual.valor + somaElementos(atual.proximo);
     }
 
-    public int contarMaioresQue(No atual, int x){
-        if(atual == null){
+    public int contarMaioresQue(No atual, int x) {
+        if (atual == null) {
             return 0;
         }
-        if((int)atual.valor > x){
-            return contarMaioresQue(atual.proximo, x) + 1 ;
+        if ((int) atual.valor > x) {
+            return contarMaioresQue(atual.proximo, x) + 1;
         }
 
         return contarMaioresQue(atual.proximo, x);
-        
+
     }
 
-    public int maiorElemento(No atual){
-        if(atual == null){
+    public int maiorElemento(No atual) {
+        if (atual == null) {
             return 0;
         }
 
-        if(atual.proximo != null){
+        if (atual.proximo != null) {
 
-            if((int)atual.valor > (int)atual.proximo.valor){
+            if ((int) atual.valor > (int) atual.proximo.valor) {
                 return maiorElemento(atual.proximo);
             }
-    
+
             return maiorElemento(atual.proximo);
         }
-        
-        return (int)atual.valor;
+
+        return (int) atual.valor;
     }
 
-    public void removerValor(int valor){
-        if(cabeca != null){
-            if(atual)
-            No<Integer> atual = cabeca;
-            
-            if((int)atual.valor == valor){
-                tamanho--;
-                atual = atual.proximo;
-                removerValor(valor);
-            }
+    public void removerValor(int valor) {
+        if (cabeca == null) {
+            return;
+        }
 
+        if(cabeca.proximo != null){
+            if ((int) cabeca.valor == valor) {
+                tamanho--;
+                cabeca = cabeca.proximo;
+                removerValor(valor);
+                return;
+            }
             removerValor(valor);
         }
-        
-        System.out.println("nao ha mais valores para serem removidos");
-
+        return;
     }
 
+    public void andaNaLista(No atual) {
+        if (cabeca == null) {
+            return;
+        }
+        if (atual.proximo != null) {
+            andaNaLista(atual.proximo);
+        }
+        return;
+    }
 
     public void adicionarRegistro(Integer valor) {
         No<Integer> novoNo = new No<>(valor);
@@ -77,7 +85,7 @@ public class ListaBaseadaEmListaEncadeada<Integer>{
         }
         tamanho++;
     }
-  
+
     public No<Integer> obterNo(int posicao) {
         verificarIndice(posicao);
         No<Integer> atual = cabeca;
