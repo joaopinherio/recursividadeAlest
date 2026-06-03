@@ -50,26 +50,35 @@ public class ListaBaseadaEmListaEncadeada<Integer> {
             return;
         }
 
-        if(cabeca.proximo != null){
+        No atual = andaNaLista(cabeca, valor);
+
+        /*if(cabeca.proximo != null){
             if ((int) cabeca.valor == valor) {
-                tamanho--;
-                cabeca = cabeca.proximo;
+                atual = atual.proximo;
+                //tamanho--;
+                //cabeca = atual;
                 removerValor(valor);
-                return;
             }
-            removerValor(valor);
+            //
         }
-        return;
+        return;*/
     }
 
-    public void andaNaLista(No atual) {
+    public No andaNaLista(No atual, int valor) {
         if (cabeca == null) {
-            return;
+            return null;
         }
         if (atual.proximo != null) {
-            andaNaLista(atual.proximo);
+            if((int)atual.valor == valor){
+                atual = atual.proximo;
+                tamanho--;
+                System.out.println(atual.valor);
+                return andaNaLista(atual, valor);
+            }
+            System.out.println(atual.valor);
+            return andaNaLista(atual.proximo, valor);
         }
-        return;
+        return null;
     }
 
     public void adicionarRegistro(Integer valor) {
@@ -86,7 +95,7 @@ public class ListaBaseadaEmListaEncadeada<Integer> {
         tamanho++;
     }
 
-    public No<Integer> obterNo(int posicao) {
+    public No<Integer> obterNo(int posicao)      {
         verificarIndice(posicao);
         No<Integer> atual = cabeca;
         for (int i = 0; i < posicao; i++) {
@@ -113,4 +122,5 @@ public class ListaBaseadaEmListaEncadeada<Integer> {
             throw new IndexOutOfBoundsException("Índice inválido: " + indice);
         }
     }
+
 }

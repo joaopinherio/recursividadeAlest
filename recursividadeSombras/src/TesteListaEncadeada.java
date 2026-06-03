@@ -27,5 +27,10 @@ public class TesteListaEncadeada {
         System.out.println("remover valor");
         listaEncadeada.removerValor(20);
 
+        System.out.println("print lista");
+        //listaEncadeada.andaNaLista(listaEncadeada.obterNo(0));
+
+
+
     }
 }
