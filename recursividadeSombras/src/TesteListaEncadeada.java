@@ -1,35 +1,12 @@
 public class TesteListaEncadeada {
     public static void main(String[] args) {
-        ListaBaseadaEmListaEncadeada<Integer> listaEncadeada = new ListaBaseadaEmListaEncadeada<Integer>();
+        ArvoreBinaria<Integer> arvore = new ArvoreBinaria<>();
+        
+        arvore.adcionaRaiz(1);
+        arvore.adcionarEsquerda(arvore.raiz,2);
+        arvore.adcionarDireita(arvore.raiz,2);
 
-        // Adicionando elementos
-        listaEncadeada.adicionarRegistro(10);
-        listaEncadeada.adicionarRegistro(20);
-        listaEncadeada.adicionarRegistro(30);
-
-
-        // Tamanho da lista
-        System.out.println("Tamanho: " + listaEncadeada.obterTamanho()); // 2
-
-        //4.1
-        System.out.println("soma elementos");
-        System.out.println(listaEncadeada.somaElementos(listaEncadeada.obterNo(0)));
-
-        //4.2
-        System.out.println("count maior numero qeu:");
-        System.out.println(listaEncadeada.contarMaioresQue(listaEncadeada.obterNo(0), 9));
-
-        //4.3
-        System.out.println("maior valor");
-        System.out.println(listaEncadeada.maiorElemento(listaEncadeada.obterNo(0)));
-
-        //4.5
-        System.out.println("remover valor");
-        listaEncadeada.removerValor(20);
-
-        System.out.println("print lista");
-        //listaEncadeada.andaNaLista(listaEncadeada.obterNo(0));
-
+        System.out.println(arvore.contarNodos(arvore.raiz));
 
 
     }

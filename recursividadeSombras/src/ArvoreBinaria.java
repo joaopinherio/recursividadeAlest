@@ -1,5 +1,5 @@
 public class ArvoreBinaria<T> {
-    private No<T> raiz; 
+    public No<T> raiz; 
 
     public ArvoreBinaria() {
         this.raiz = null;
@@ -9,7 +9,19 @@ public class ArvoreBinaria<T> {
         raiz = new No<>(valor);
     }
 
+    public void adcionarEsquerda(No<T> no, T valor){
+        if(no == null){
+            return;
+        }
+        no.esquerda = new No(valor);
+    }
 
+    public void adcionarDireita(No<T> no, T valor){
+        if(no == null){
+            return;
+        }
+        no.direita = new No(valor);
+    }
 
     public void imprimir(No<T> atual){
         if(atual == null){
