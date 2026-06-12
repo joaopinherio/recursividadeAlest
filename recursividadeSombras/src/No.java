@@ -1,9 +1,13 @@
-class No<Integer> {
-    Integer valor;
-    No<Integer> proximo;
+class No<T> {
+    T dado;
+    No<T> esquerda;
+    No<T> direita;
+    No<T> pai;
 
-    No(Integer valor) {
-        this.valor = valor;
-        this.proximo = null;
+    No(T valor) {
+        this.dado = valor;
+        this.esquerda = null;
+        this.direita = null;
+        this.pai = null;
     }
 }
