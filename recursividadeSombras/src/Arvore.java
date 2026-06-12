@@ -1,4 +1,4 @@
-public class ListaBaseadaEmListaEncadeada<Integer> {
+public class ArvoreBinaria<T> {
     private No<Integer> cabeca; // Início da lista
     private int tamanho;
 
