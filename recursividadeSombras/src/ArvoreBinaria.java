@@ -37,8 +37,8 @@ public class ArvoreBinaria<T> {
 
     //1
     public int contarNodos(No<T> atual){
-        int result = 1;
         if(atual != null){
+            int result = 1;
             return percorreLista(atual, result);
         }
         return 0;
@@ -51,6 +51,25 @@ public class ArvoreBinaria<T> {
             percorreLista(atual.esquerda,count++);
             
             percorreLista(atual.direita,count++);
+        }
+
+        return count;
+    }
+
+    //2
+        public int contarAltura(No<T> atual){
+        if(atual != null){
+            int result = 1;
+            return percorreListaAltura(atual, result);
+        }
+        return 0;
+    }
+
+
+    public int percorreListaAltura(No atual, int count){
+
+        if(atual != null){
+            percorreLista(atual.esquerda,count++);
         }
 
         return count;

@@ -5,13 +5,11 @@ public class TesteListaEncadeada {
         arvore.adcionaRaiz(1);
         arvore.adcionarEsquerda(arvore.raiz,2);
         arvore.adcionarDireita(arvore.raiz,3);
-        arvore.adcionarEsquerda(arvore.raiz.esquerda,2);
-        
 
 
         arvore.imprimir(arvore.raiz);
-         System.out.println(arvore.contarNodos(arvore.raiz));
+        System.out.println(arvore.contarNodos(arvore.raiz));
 
-
+        System.out.println(arvore.contarAltura(arvore.raiz));
     }
 }
