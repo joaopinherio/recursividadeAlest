@@ -64,9 +64,11 @@ public class ArvoreBinaria<T> {
 
 
     //3
-    public boolean contarFolhas(No folha){
-        
-        if(atual)
+    public boolean ehFolha(No nodo){
+        if(nodo.esquerda == null && nodo.direita == null){
+            return true;
+        }
+        return false;
     }
 
     public No<T> buscarFolha(No atual){
