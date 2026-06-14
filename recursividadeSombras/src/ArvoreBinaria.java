@@ -37,28 +37,23 @@ public class ArvoreBinaria<T> {
 
     //1
     public int contarNodos(No<T> atual){
-        int result =1;
+        int result = 1;
         if(atual != null){
-            if(percorreLista(atual) != null){
-                return result += contarNodos(percorreLista(atual));
-            }
+            return percorreLista(atual, result);
         }
         return 0;
     }
 
-    public No<T> percorreLista(No atual){
-        if(atual == null){
-            return null;
+
+    public int percorreLista(No atual, int count){
+
+        if(atual != null){
+            percorreLista(atual.esquerda,count++);
+            
+            percorreLista(atual.direita,count++);
         }
 
-        if(atual.esquerda != null){
-            return atual.esquerda;
-        }
-        if(atual.direita != null){
-            return atual.direita;
-        }
-
-        return null;
+        return count;
     }
 
 
